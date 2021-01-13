@@ -92,8 +92,8 @@ input, select{
 }
 
 .ocultar{
-  /* display: none; */
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden; */
   /* font-size; */
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

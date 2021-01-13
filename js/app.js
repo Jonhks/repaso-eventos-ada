@@ -5,6 +5,7 @@ const color = document.getElementById('color');
 const fondo = document.getElementById('fondo');
 const colorText = document.getElementById('color-text');
 const backColor = document.getElementById('back-color');
+const centerText = document.getElementById('center-text');
 
 
 // Elementos a los que se les aplicara los eventos
@@ -16,6 +17,7 @@ const izquierda = document.getElementById('izquierda');
 const derecha = document.getElementById('derecha');
 const centrar = document.getElementById('centrar');
 const transparente = document.getElementById('transparente');
+const urlImg = document.getElementById('url-img');
 
 topInput.addEventListener('keyup', () => {
   primerTexto.innerHTML = topInput.value;
@@ -26,11 +28,13 @@ topCheck.addEventListener('click',() => {
   if(topCheck.checked){
     // primerTexto.style.display = 'none';
     primerTexto.classList.add('ocultar');
+    centerText.style.height = '55vh'
   } else {
     // primerTexto.style.display = 'block';
     // primerTexto.style.color = 'red';
     primerTexto.style.backGround = 'blue';
     primerTexto.classList.remove('ocultar');
+    centerText.style.height = 'auto'
   }
 });
 
@@ -92,12 +96,31 @@ transparente.addEventListener('click', (e) => {
 // Como logramos que al poner la url en el input se pinte nuestra imagen en la sección correspondiente
 
 // Inicio
-  // Tener identificado de donde sacaremos el link (Llamar al id)
+  // Tener identificado de donde sacaremos el link (Llamar al id) +
   // Identificar cuando el usuario ingrese el link
   // Guardar el link que ingreso el usuario
   // Identificar la etiqueta o el lugar donde lo pondremos
   // Agregarle el link que el usuario ingrese para que se refleje la imagen
 // Fin
+
+urlImg.addEventListener('keyup', (e) => {
+  const src = urlImg.value;
+  // console.log(e.target.value);
+  centerText.style.backgroundImage = `url('${src}')`;
+  centerText.style.backgroundPosition = 'center';
+  centerText.style.backgroundRepeat = 'no-repeat';
+  centerText.style.backgroundSize = 'contain';
+
+  console.log(src);
+})
+
+
+
+
+
+
+
+
 
 
 
